@@ -40,6 +40,9 @@ const portNo = process.env.PORT_NO || 3000;
 app.use("/api/product", productRoutes.route);
 app.use("/api/auth", userRoutes.routes);
 app.use("/api/order", orderRoutes.routes);
+app.use("/", (req, res) => {
+  res.send({ message: "working.............." });
+});
 
 app.listen(portNo, (err) => {
   if (err) {
